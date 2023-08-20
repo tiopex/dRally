@@ -57,7 +57,6 @@ static void menu___194a8h(void){
 	__BYTE__ 	esp[4];
 	racer_t * 	s_6c;
 		
-		
 	s_6c = (racer_t *)___1a01e0h;
 	D(___185a24h) = 0;
 
@@ -77,9 +76,8 @@ static void menu___194a8h(void){
 			if(strcmp(___1866b8h+0x1c2, "Start A New Game") == 0){
 
 				___13710h(1, 0);
-
+				
 				if(___3ab5ch_cdecl(1)){
-					
 					write_b(___185b58h+1, 0);
 					write_b(___185b58h+0xa, 1);
 					write_b(___185b58h+0xb, 1);

@@ -16,6 +16,10 @@ void dRally_Memory_clean(void);
 
 void_cb exit_cb_array[NUM_ATEXIT_CALLBACKS] = {0};
 
+SDL_GameController* controller = NULL;
+SDL_Event event;
+SDL_bool quit = SDL_FALSE;
+
 void dRally_System_doExitCallbacks(void){
 
     unsigned int   n;
@@ -128,10 +132,25 @@ void dRally_System_init(void){
 
     time_t 		tmt;
 
-	if(SDL_Init(SDL_INIT_VIDEO)){
+	if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_GAMECONTROLLER)){
 		
 		SDL_Log("Failed to init video subsystem: %s", SDL_GetError());
 	}
+
+	// Open the first available game controller
+    for (int i = 0; i < SDL_NumJoysticks(); ++i) {
+        if (SDL_IsGameController(i)) {
+            controller = SDL_GameControllerOpen(i);
+            if (controller) {
+                break;
+            }
+        }
+    }
+    
+    if (!controller) {
+        SDL_Log("No compatible game controller found.");
+    }
+
 
 #if !defined(_WIN32)
     time(&tmt);

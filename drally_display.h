@@ -2,8 +2,8 @@
 #define __DRALLY_DISPLAY_H
 
 
-#define W_WIDTH 	1024//800//640
-#define W_HEIGHT 	768//600//480
+#define W_WIDTH 	640//800//640
+#define W_HEIGHT 	480//600//480
 
 enum { VGA3, VGA13, VESA101 };
 enum { W_SHRINK, W_LETTERBOX};

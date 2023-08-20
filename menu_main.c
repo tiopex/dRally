@@ -82,6 +82,10 @@ void dRChatbox_clear(void);
 void dRChatbox_push(const char *, int);
 void setIntensity___19eb50h(__DWORD__);
 
+
+int isinmenu = 0;
+
+
 void menu_main(void){
 
     int   			n;
@@ -164,7 +168,12 @@ void menu_main(void){
 	// MAIN MENU LOOP
 	IsMainMenuLoopToBreak = 0;
 	IsBackFromHOF = 0;
+	
+	
+
+	
 	while(!IsMainMenuLoopToBreak){
+		isinmenu = 1;
 
 		memcpy(___1a112ch__VESA101_ACTIVESCREEN_PTR+0x280*84, ___1a1138h__VESA101_BACKGROUND+0x280*84, 0x280*283);
 		___13710h(0, 1);
@@ -210,6 +219,7 @@ void menu_main(void){
 			}
 		}
 
+
 		if(D(___196a84h) == 0) ___12cb8h__VESA101_PRESENTSCREEN();
 
 		switch(___146c4h_cdecl(0)+1){
@@ -245,4 +255,6 @@ void menu_main(void){
 			break;
 		}
 	}
+
+
 }

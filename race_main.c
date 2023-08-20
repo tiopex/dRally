@@ -213,6 +213,9 @@ static void race___52ac4h_helper(int n){ D(___243c60h) = n; race___52ac4h(); }
 static void race___526ach_helper(int n){ D(___243c60h) = n; race___526ach(); }
 static void race___4ff50h_helper(int n){ D(___243c60h) = n; race___4ff50h(); }
 
+extern int isinmenu;
+	
+
 // ___56774h
 void race_main(int MyIndex, int NumCars){		// my_position_index, number_of_racers
 
@@ -303,6 +306,8 @@ void race_main(int MyIndex, int NumCars){		// my_position_index, number_of_racer
 	resetCounter(5);
 	resetCounter(2);
 	D(SUPERGLOBAL___243cd0h) = 0;
+	
+	isinmenu = 0;
 
 	while(1){
 
@@ -758,7 +763,6 @@ void race_main(int MyIndex, int NumCars){		// my_position_index, number_of_racer
 #endif // DR_MULTIPLAYER
 
 			if(D(___243d14h) != 1){
-
 				D(___243d14h) = 0;
 				dRally_Sound_pushEffect(1, (s_94[MY_CAR_IDX].__0&0xff)+25, 0, 0x10000, 0x28000, 0x8000);
 			}

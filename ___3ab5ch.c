@@ -5,6 +5,7 @@
 #include "drally_structs_free.h"
 #include "sfx.h"
 #include "watcom106.h"
+#include <time.h>
 
 	extern __POINTER__ ___1a1114h;
 	extern __BYTE__ ___1a54d0h[];
@@ -94,13 +95,13 @@ __DWORD__ ___3ab5ch_cdecl(__DWORD__ A1){
 
 	j = -1;
 	while(++j < ecx){
-
 		i = -1;
 		while(++i < 0x212){
 
 			if((px = B(___1a54d0h+0x212*j+i)) != 0) B(___1a112ch__VESA101_ACTIVESCREEN_PTR+0x280*(112+j)+(63+i)) = px;
 		}
 	}
+
 
 	j = -1;
 	while(++j < 0x66){
@@ -192,7 +193,25 @@ __DWORD__ ___3ab5ch_cdecl(__DWORD__ A1){
 	___5994ch();
 	___59b3ch();
 	strcpy(esp, s_6c[D(___1a1ef8h)].name);
-	strcpy(s_6c[D(___1a1ef8h)].name, "");
+	// Gameblabla
+	// Consoles don't have a keyboard so generate a bunch of default names
+    srand(time(NULL)); // Initialize random seed with current time
+    strcpy(s_6c[D(___1a1ef8h)].name, "Default");
+    const char *names[] = {
+        "Akira Shadow",
+        "Ryu Bloodborn",
+        "Hana Nox",
+        "Yuki Viper",
+        "Kuro Onyx",
+        "Mizuki Ember",
+        "Rei Venom",
+        "Sora Nightshade",
+        "Haru Eclipse",
+        "Kira Phoenix"
+    };
+    int randomIndex = rand() % 10; // Generate a random index from 0 to 9
+    strcpy(s_6c[D(___1a1ef8h)].name, names[randomIndex]);
+	//strcpy(s_6c[D(___1a1ef8h)].name, "Default");
 
 	if(___17510h_cdecl(s_6c[D(___1a1ef8h)].name, ebp+0x6e, D(esp+0x44)+0x60, ___1858c8h, 0xa, 0x12c, 0, 1, 1) == 0){
 

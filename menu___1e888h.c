@@ -89,8 +89,6 @@ static __DWORD__ helper_color(__DWORD__ A0, __DWORD__ A1){
 }
 
 
-
-
 void menu___1e888h(void){
 
 	__DWORD__ 	bb, gg, rr, nn;
@@ -99,7 +97,6 @@ void menu___1e888h(void){
 	__BYTE__ * 	esp = __esp+0x10;
 	char 	buffer[0x96];
 	racer_t * 	s_6c;
-
 
 	s_6c = (racer_t *)___1a01e0h;
 

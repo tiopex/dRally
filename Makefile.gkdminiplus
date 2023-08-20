@@ -1,11 +1,11 @@
-CC := gcc
+CC := /opt/gkdminiplus-toolchain/bin/aarch64-linux-gcc
 MSBUILD := MSBuild.exe
 
-DEFINES := -DDR_LETTERBOX #-DDR_CDCHECK
-INCLUDES := -I/usr/include/SDL2
+DEFINES := -DDR_MULTIPLAYER -DIPXNET -DDR_LETTERBOX #-DDR_CDCHECK
+INCLUDES := $(shell /opt/gkdminiplus-toolchain/aarch64-buildroot-linux-gnu/sysroot/usr/bin/sdl2-config --cflags)
 FLAGS ?= -O3
 FLAGS += -Werror -Wno-unused-result
-LDFLAGS := -lm -lSDL2
+LDFLAGS := -lm -lSDL2 -lSDL2_net
 
 OBJS := data.o bss.o
 

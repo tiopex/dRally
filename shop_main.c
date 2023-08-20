@@ -143,6 +143,8 @@ static __DWORD__ checkCheat(__BYTE__ * p){
 
 #define LONGCOND ((D(___185a3ch) == 0)&&(D(___196a98h) != 3)&&(D(___196a9ch) != 1)&&(D(___196aa0h) != 1)&&(D(___196aa4h) == 0)&&(D(___196aa8h) == 0)&&(D(___196ab0h) != 1))
 
+extern int isinmenu;
+
 // ___2b8ach
 void shop_main(void){
 
@@ -153,6 +155,7 @@ void shop_main(void){
 	__DWORD__ 	r, g, b;
 	racer_t * 	s_6c;
 
+	isinmenu = 1;
 
 	s_6c = (racer_t *)___1a01e0h;
 	D(esp+0x30) = 0;

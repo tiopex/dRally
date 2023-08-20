@@ -131,6 +131,7 @@ void __DISPLAY_SET_PALETTE_COLOR(int b, int g, int r, int n);
 
 void __PRESENTSCREEN__(void){
 
+
 	if(GX.ActiveMode){
 
 		GX.Texture = SDL_CreateTextureFromSurface(GX.Renderer, GX.Surface);

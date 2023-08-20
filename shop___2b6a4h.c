@@ -28,6 +28,8 @@ void ___269e4h(void);
 void ___26e54h(void);
 void ___25330h(void);
 
+extern int isinmenu;
+
 void shop___2b6a4h(void){
 
 	int 	i	, j;
@@ -37,6 +39,8 @@ void shop___2b6a4h(void){
 
 	s_6c = (racer_t *)___1a01e0h;
 	head_img = ___1a10bch;
+	
+	isinmenu = 1;
 
 #if defined(DR_MULTIPLAYER)
 	if(___19bd60h != 0) head_img = ___1a10e8h;

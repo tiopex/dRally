@@ -383,6 +383,8 @@ static void CONFIG_DEFAULT(void){
         }
     }
 
+	//Gameblabla
+	// GCW0
     ___1a1110h_gp_steer_left = B(___199f3eh);
     ___1a1130h_gp_steer_right = B(___199f3fh);
     ___1a113ch_gp_brake = B(___199f41h);
@@ -390,6 +392,9 @@ static void CONFIG_DEFAULT(void){
     ___1a1120h_gp_turbo_boost = B(___199f43h);
     ___1a1118h_gp_machine_gun = B(___199f44h);
     ___1a111ch_gp_drop_mine = B(___199f45h);
+
+   
+#if 0
     ___1a1140h.turbo_boost = DR_SCAN_LSHIFT;
     ___1a1140h.horn = DR_SCAN_SPACE;
     ___1a1140h.steer_left = DR_SCAN_LEFT;
@@ -398,6 +403,18 @@ static void CONFIG_DEFAULT(void){
     ___1a1140h.drop_mine = DR_SCAN_LALT;
     ___1a1140h.accelerate = DR_SCAN_A;
     ___1a1140h.machine_gun = DR_SCAN_LCTRL;
+#else
+	// GCW0
+    ___1a1140h.turbo_boost = DR_SCAN_BACKSPACE;
+    ___1a1140h.horn = DR_SCAN_TAB;
+    ___1a1140h.steer_left = DR_SCAN_LEFT;
+    ___1a1140h.steer_right = DR_SCAN_RIGHT;
+
+    ___1a1140h.brake = DR_SCAN_LALT;
+    ___1a1140h.drop_mine = DR_SCAN_LSHIFT;
+    ___1a1140h.accelerate = DR_SCAN_LCTRL;
+    ___1a1140h.machine_gun = DR_SCAN_SPACE;
+#endif
 
     n = -1;
     while(++n < 10){

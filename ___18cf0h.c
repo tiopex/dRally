@@ -93,7 +93,9 @@ void ___18cf0h(void){
 			___13248h_cdecl(0x78, 0x113, 0x186, 0x46, 1);
 			___12e78h_v3(___1a1108h___185c0bh, "Enter the name of save game?", 130, 282);
 			___12cb8h__VESA101_PRESENTSCREEN();
-			strcpy(esp, strcmp(___1866b8h[5][esi], "Empty Slot") ? ___1866b8h[5][esi] : "");
+			//Gameblabla
+			//strcpy(esp, strcmp(___1866b8h[5][esi], "Empty Slot") ? ___1866b8h[5][esi] : "");
+			strcpy(esp, strcmp(___1866b8h[5][esi], "Empty Slot") ? ___1866b8h[5][esi] : "DEFAULT");
 			eax = ___17510h_cdecl(esp, 0x82, 0x12a, (__POINTER__)___1858c8h, 0xf, 0x140, 1, 1, 0);
 			
 			if(eax != 0){

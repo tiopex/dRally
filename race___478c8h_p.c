@@ -202,6 +202,8 @@ static int ___47620h(void){
 	return rslt;
 }
 
+int abort_race = 0;
+
 void race___478c8h(__DWORD__ A1){
 
 	int 	i, j, n;
@@ -242,6 +244,8 @@ void race___478c8h(__DWORD__ A1){
 
     i = 0;
 	n = 0;
+	abort_race = 1;
+	
 	while(n == 0){
 
 		if(((int)D(___2432e4h) >= 0x3c8)&&(i == 0)){
@@ -266,6 +270,7 @@ void race___478c8h(__DWORD__ A1){
 		if((int)D(___24330ch) < 1) D(___24330ch) = 1;
 		if(((int)D(___2432e4h) >= 0x3c8)&&(A1 != 0)) n = 0x1;
 	}
+	abort_race = 0;
 
 	memset(kmap, 0, 0x100);
 	dRally_Sound_freeEffectChannel(0x5);
