@@ -1,0 +1,25 @@
+The Death Rally port needs extra game resources as the game is proprietary !
+
+Put the game files in $HOME/.config/deathrally
+If the folder does not exist, launch the game once or create them yourself.
+
+ENDANI.haf
+ENDANI0.HAF
+ENGINE.BPA
+IBFILES.BPA
+MENU.BPA
+MUSICS.BPA
+SANIM.haf
+TR0.BPA
+TR1.BPA
+TR2.BPA
+TR3.BPA
+TR4.BPA
+TR5.BPA
+TR6.BPA
+TR7.BPA
+TR8.BPA
+TR9.BPA
+
+
+You should be able to get the game for free on Steam or GOG or elsewhere.

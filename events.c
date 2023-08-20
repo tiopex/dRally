@@ -25,10 +25,80 @@ void IO_Loop(void) {
     while (SDL_PollEvent(&e)) {
         switch (e.type) {
             case SDL_KEYDOWN:
-                dRally_Keyboard_make(e.key.keysym.scancode);
+				switch(e.key.keysym.scancode)
+				{
+					case SDL_SCANCODE_HOME:
+						___2432c8h();
+					break;
+                    case SDL_SCANCODE_LCTRL:
+						if (isinmenu == 1)
+						{
+							dRally_Keyboard_make(40);
+						}
+						else if (abort_race)
+						{
+							dRally_Keyboard_make(SDL_SCANCODE_Y);
+						}
+						else
+						{
+							dRally_Keyboard_make(224);
+						}
+                        break;
+					case SDL_SCANCODE_LALT:
+						if (isinmenu == 1)
+						{
+							dRally_Keyboard_make(41);
+						}
+						else if (abort_race)
+						{
+							dRally_Keyboard_make(SDL_SCANCODE_N);
+						}
+						else
+						{
+							 dRally_Keyboard_make(226);
+						}
+					break;
+					default:
+						dRally_Keyboard_make(e.key.keysym.scancode);
+					break;
+				}
                 break;
             case SDL_KEYUP:
-                dRally_Keyboard_break(e.key.keysym.scancode);
+				switch(e.key.keysym.scancode)
+				{
+                    case SDL_SCANCODE_LCTRL:
+						if (isinmenu == 1)
+						{
+							dRally_Keyboard_break(40);
+						}
+						else if (abort_race)
+						{
+							dRally_Keyboard_break(SDL_SCANCODE_Y);
+						}
+						else
+						{
+							dRally_Keyboard_break(224);
+						}
+                        break;
+					case SDL_SCANCODE_LALT:
+						if (isinmenu == 1)
+						{
+							dRally_Keyboard_break(41);
+						}
+						else if (abort_race)
+						{
+							dRally_Keyboard_break(SDL_SCANCODE_N);
+						}
+						else
+						{
+							 dRally_Keyboard_break(226);
+						}
+					break;
+					default:
+					dRally_Keyboard_break(e.key.keysym.scancode);
+					break;
+				}
+               
                 break;
             case SDL_QUIT:
                 printf("[dRally] TODO: exit not handled properly\n");

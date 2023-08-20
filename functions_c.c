@@ -6,13 +6,27 @@ FILE * strupr_fopen(const char * file_name, const char * mode){
 
 	char buffer[256];
 
-	if(strlen(file_name) > 255){
+	// Case sensitive for LINUX !!!
+	// Gameblabla
+#ifdef HOME_SUPPORT
+	snprintf(fpath, sizeof(fpath), "%s%s", home_path, file_name);
+	printf("strupr_fopen fpath %s\n", fpath);
+	if(strlen(fpath) > 255){
+		printf("[strupr_fopen] File name too long: (%s)\n", file_name);
+		return (FILE *)0;
+	}
 
+	FILE*fp;
+	fp = fopen(fpath, mode);
+	return fp;
+#else
+	if(strlen(file_name) > 255){
 		printf("[strupr_fopen] File name too long: (%s)\n", file_name);
 		return (FILE *)0;
 	}
 
 	return fopen(strupr_watcom106(strcpy(buffer, file_name)), mode);
+#endif
 }
 
 __DWORD__ GET_FILE_SIZE(const char * file_name){

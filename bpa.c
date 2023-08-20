@@ -1,4 +1,7 @@
 #include "bpa.h"
+#ifdef HOME_SUPPORT
+extern char home_path[128], cfg_path[128], fpath[128];
+#endif
 
 #pragma pack(1)
 typedef struct bpa_entry_s {
@@ -151,12 +154,16 @@ BPA * bpa_open(const char * bpa_fname){
 
     bpa = &BPAContext;
     memset(bpa, 0, sizeof(BPA));
-
+    
     strcpy(bpa->file, bpa_fname);
-    bpa->entry = 0;
-    
+	bpa->entry = 0;
+	
+#ifdef HOME_SUPPORT
+	snprintf(fpath, sizeof(fpath), "%s%s", home_path, bpa_fname);
+    if((bpa->fd = fopen(fpath, "rb")) != (FILE *)0){
+#else
     if((bpa->fd = fopen(bpa_fname, "rb")) != (FILE *)0){
-    
+ #endif
         fread(&bpa->header, 1, sizeof(bpa_header_t), bpa->fd);
         bpa->header.n = SDL_SwapLE32(bpa->header.n);
         for (int i = 0; i < bpa->header.n; i++)

@@ -1,6 +1,10 @@
 #include "drally.h"
 #include "drally_display.h"
 
+#ifdef HOME_SUPPORT
+char home_path[128], cfg_path[128], fpath[128];
+#endif
+
 #if defined(DR_MULTIPLAYER)
 extern __DWORD__ ___19bd60h;
 void ___623d4h(void);
@@ -29,6 +33,16 @@ static void ___100dch(void){
 }
 
 int main(int argc, char * argv[]){
+
+#ifdef HOME_SUPPORT
+	FILE* fp;
+	
+	snprintf(home_path, sizeof(home_path), "%s/.config/deathrally/", getenv("HOME"));
+	snprintf(cfg_path, sizeof(cfg_path), "%s/.config", getenv("HOME"));
+	
+	if (access( cfg_path, F_OK ) == -1) { mkdir(cfg_path, 0755); }
+	if (access( home_path, F_OK ) == -1) { mkdir(home_path, 0755); }
+#endif
 
 	dRally_System_init();
 #if defined(DR_LETTERBOX)

@@ -11,6 +11,13 @@
 
 #include "types.h"
 
+#ifdef HOME_SUPPORT
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+extern char home_path[128], cfg_path[128], fpath[128];
+#endif
+
 
 typedef void (*void_cb)(void);
 

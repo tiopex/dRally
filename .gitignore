@@ -17,3 +17,6 @@ z_regex*
 *_32b.c
 games/
 *.o
+*.gcda
+*.opk
+*.zip

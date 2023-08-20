@@ -1,11 +1,20 @@
-CC := gcc
+CC := /opt/gcw0-toolchain/bin/mipsel-linux-gcc
 MSBUILD := MSBuild.exe
 
-DEFINES := -DDR_LETTERBOX -DHOME_SUPPORT #-DDR_CDCHECK
-INCLUDES := -I/usr/include/SDL2
-FLAGS ?= -O3
-FLAGS += -Werror -Wno-unused-result
-LDFLAGS := -lm -lSDL2
+DEFINES := -DDR_MULTIPLAYER -DIPXNET -DDR_LETTERBOX -DHOME_SUPPORT -DGCW0 #-DDR_CDCHECK
+INCLUDES := $(shell /opt/gkdminiplus-toolchain/aarch64-buildroot-linux-gnu/sysroot/usr/bin/sdl2-config --cflags)
+FLAGS ?= -Ofast -ffunction-sections -fdata-sections -fipa-pta -mbranch-cost=2 -mbranch-likely -mplt -march=mips32r2 -mtune=mips32r2
+
+PROFILE = APPLY
+
+ifeq ($(PROFILE), YES)
+FLAGS 		+= -fprofile-generate=/media/data/local/home/profile_dr
+else ifeq ($(PROFILE), APPLY)
+FLAGS		+= -fprofile-use="."
+endif
+
+FLAGS += -Wall -Wno-unused-result
+LDFLAGS := -lm -lSDL2 -lSDL2_net -s -Wl,--as-needed -Wl,--gc-sections
 
 OBJS := data.o bss.o
 
