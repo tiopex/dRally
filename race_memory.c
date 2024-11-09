@@ -20,6 +20,7 @@
 	extern __POINTER__ CPY_GEN_MES_BPK;
 	extern __POINTER__ RASTI1_BPK;
 	extern __POINTER__ GOALNUM2_BPK;
+	extern __POINTER__ GOALNUM2_BPK1;
 	extern __POINTER__ RACE_FLAMEX_BPK[6];
 	extern __POINTER__ RACE_MINES1A_BPK;
 	extern __POINTER__ RACE_BLOWI_BPK;
@@ -52,7 +53,7 @@ void race_alloc(void){
 	GEN_MES_BPK = ___3f71ch__allocateMemory(0x3c90);
 	CPY_GEN_MES_BPK = ___3f71ch__allocateMemory(0x3c90);
 	RASTI1_BPK = ___3f71ch__allocateMemory(0x800);
-	GOALNUM2_BPK = ___3f71ch__allocateMemory(0x268);
+	GOALNUM2_BPK1 = ___3f71ch__allocateMemory(0x268);
 	RACE_FLAMEX_BPK[0] = ___3f71ch__allocateMemory(0xc00);
 	RACE_FLAMEX_BPK[1] = ___3f71ch__allocateMemory(0xc00);
 	RACE_FLAMEX_BPK[2] = ___3f71ch__allocateMemory(0xc00);
@@ -88,7 +89,7 @@ void race_free(void){
 	dRMemory_free(GEN_MES_BPK);
 	dRMemory_free(CPY_GEN_MES_BPK);
 	dRMemory_free(RASTI1_BPK);
-	dRMemory_free(GOALNUM2_BPK);
+	dRMemory_free(GOALNUM2_BPK1);
 	dRMemory_free(RACE_FLAMEX_BPK[0]);
 	dRMemory_free(RACE_FLAMEX_BPK[1]);
 	dRMemory_free(RACE_FLAMEX_BPK[2]);

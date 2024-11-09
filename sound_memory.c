@@ -64,8 +64,11 @@ __POINTER__ ___5f26ch_cdecl(__DWORD__ size){
 
     rslt = alloc.next;
     if((size+alloc.next) > alloc.end) ___58b20h(0x17);
-    //alloc.next = ptr_align(alloc.next+size, 4);
+#ifdef MIYOO
+    alloc.next = ptr_align(alloc.next+size, 4);
+#else
     alloc.next += size;
+#endif
 
     return rslt;
 }

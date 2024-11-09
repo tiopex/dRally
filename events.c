@@ -30,7 +30,11 @@ void IO_Loop(void) {
 					case SDL_SCANCODE_HOME:
 						___2432c8h();
 					break;
-                    case SDL_SCANCODE_LCTRL:
+#ifdef MIYOO
+					case SDL_SCANCODE_LALT:
+#else
+					case SDL_SCANCODE_LCTRL:
+#endif
 						if (isinmenu == 1)
 						{
 							dRally_Keyboard_make(40);
@@ -44,7 +48,11 @@ void IO_Loop(void) {
 							dRally_Keyboard_make(224);
 						}
                         break;
+#ifdef MIYOO
+					case SDL_SCANCODE_LCTRL:
+#else
 					case SDL_SCANCODE_LALT:
+#endif
 						if (isinmenu == 1)
 						{
 							dRally_Keyboard_make(41);

@@ -22,6 +22,7 @@
 	extern int NUM_OF_CARS;
 	extern __BYTE__ ___243854h[];
 	extern __POINTER__ GOALNUM2_BPK;
+	extern __POINTER__ GOALNUM2_BPK1;
 	extern __BYTE__ ___1de210h[];
 	extern int NUM_OF_LAPS;
 	extern __BYTE__ ___1de580h[];
@@ -133,7 +134,7 @@ void race___40f48h(void){
 
         if(s_35e[D(___243854h+4*n)].Finished != 0){
 
-            __BYTE__* s = GOALNUM2_BPK;
+            __BYTE__* s = GOALNUM2_BPK1;
             __BYTE__* d = BACKBUFFER + 0x200 * (32 * n + 78) + CURRENT_VIEWPORT_X + 36;
             j = 28;
             do {

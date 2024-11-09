@@ -70,7 +70,8 @@ void dRMemory_free(__POINTER__ mem){
     n = 0;
     while((n < (MEM_REGISTRY_SIZE/sizeof(AllocEntry)))&&(mem != ptr[n].linear)) n++;
 
-    if(n == (MEM_REGISTRY_SIZE/sizeof(AllocEntry))) ___58b20h(0xe);
+    if(n == (MEM_REGISTRY_SIZE/sizeof(AllocEntry)))
+		___58b20h(0xe);
 
     switch(ptr[n].type){
     case NO_MEMORY:

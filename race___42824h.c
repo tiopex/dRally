@@ -99,7 +99,8 @@ typedef struct x2c_s {
 	extern __BYTE__ ___1d8910h[];
 	extern __BYTE__ ___1d8a10h[];
 	extern __BYTE__ ___1d2710h[];
-	extern __POINTER__ GOALNUM2_BPK;
+	extern __BYTE__ GOALNUM2_BPK[];
+	extern __POINTER__ GOALNUM2_BPK1;
 	extern __POINTER__ SIDEBOM1_BPK;
 	extern __BYTE__ ___1d8110h[];
 	extern __BYTE__ ___1de7d0h[];
@@ -425,7 +426,7 @@ void race___42824h(void){
 	old_bpa_read("IBFILES.BPA", ___1a54d0h, "OTH-NUM1.BPK");
 	bpk_decode2(___1d2710h, ___1a54d0h);
 	old_bpa_read("IBFILES.BPA", ___1a54d0h, "GOALNUM2.BPK");
-	bpk_decode2(GOALNUM2_BPK, ___1a54d0h);
+	bpk_decode2(GOALNUM2_BPK1, ___1a54d0h);
 	old_bpa_read("IBFILES.BPA", ___1a54d0h, "SIDEBOM1.BPK");
 	bpk_decode2(SIDEBOM1_BPK, ___1a54d0h);
 	old_bpa_read("IBFILES.BPA", ___1a54d0h, "SMALLBAR.BPK");

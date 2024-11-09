@@ -1,4 +1,4 @@
-# dRally
+# dRally for Miyoo
 
 The main goal of this project is to create a port of Death Rally (1996) running natively on Linux and BSD based operating systems.
 
@@ -8,10 +8,10 @@ The main goal of this project is to create a port of Death Rally (1996) running 
 * SDL2
 
 
-#### Building
+#### Building for Miyoo
 
 ```sh
-FLAGS="YOUR CFLAGS" make
+make -f Makefile.miyoo
 ```
 
 #### Installation - needs original game assets

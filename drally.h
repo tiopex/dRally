@@ -165,7 +165,9 @@ void switch_b(__POINTER__, __POINTER__);
 #define ___243d48h          DAMSLID_BPK
 #define ___243d84h          RASTI1_BPK
 #define ___243d3ch          GOALNUM2_BPK
+#define ___243d3ch          GOALNUM2_BPK1
 #define ___243d34h          SIDEBOM1_BPK
+#define ___243d34h          SIDEBOM1_BPK1
 #define ___1de920h          X___1de920h
 #define ___1ded20h          Y___1ded20h
 #define ___196dc8h          TRX_VIEWPORT_TL_X

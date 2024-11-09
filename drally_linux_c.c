@@ -211,6 +211,8 @@ void dRally_Display_init(int mode){
 
 	if(!GX.Renderer){
 
+		SDL_SetHint(SDL_HINT_RENDER_BATCHING, "0");
+		SDL_SetHint(SDL_HINT_FRAMEBUFFER_ACCELERATION, "directfb");
 		SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "2");
 		GX.Renderer = SDL_CreateRenderer(GX.Window, -1, SDL_RENDERER_ACCELERATED);
 		//GX.Renderer = SDL_CreateRenderer(GX.Window, -1, SDL_RENDERER_SOFTWARE);

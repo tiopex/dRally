@@ -36,10 +36,13 @@ int main(int argc, char * argv[]){
 
 #ifdef HOME_SUPPORT
 	FILE* fp;
-	
+#ifdef MIYOO
+	snprintf(home_path, sizeof(home_path), "%s/games/drally/", "/mnt");
+	snprintf(cfg_path, sizeof(cfg_path), "%s/games/drally/.config", "/mnt");
+#else
 	snprintf(home_path, sizeof(home_path), "%s/.config/deathrally/", getenv("HOME"));
 	snprintf(cfg_path, sizeof(cfg_path), "%s/.config", getenv("HOME"));
-	
+#endif
 	if (access( cfg_path, F_OK ) == -1) { mkdir(cfg_path, 0755); }
 	if (access( home_path, F_OK ) == -1) { mkdir(home_path, 0755); }
 #endif
